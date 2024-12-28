@@ -1,0 +1,21 @@
+{{- $id := .Get "id" -}}
+{{- $class := .Get "class" -}}
+{{- $style := .Get "style" -}}
+{{- $x := .Get "x" -}}
+{{- $y := .Get "y" -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $viewBox := .Get "viewBox" -}}
+{{- $preserveAspectRatio := .Get "preserveAspectRatio" -}}
+<svg xmlns="http://www.w3.org/2000/svg"
+  {{- with $id }} id="{{ . }}" {{- end -}}
+  {{- with $class }} class="{{ . }}" {{- end -}} 
+  {{- with $style }} style="{{ . | safeCSS }}" {{- end -}} 
+  {{- with $x }} x="{{ . }}" {{- end -}} 
+  {{- with $y }} y="{{ . }}" {{- end -}} 
+  {{- with $width }} width="{{ . }}" {{- end -}} 
+  {{- with $height }} height="{{ . }}" {{- end -}} 
+  {{- with $viewBox }} viewBox="{{ . }}" {{- end -}}
+  {{- with $preserveAspectRatio }} preserveAspectRatio="{{ . }}"{{- end -}}>
+  {{- .Inner | safeHTML -}}
+</svg>
