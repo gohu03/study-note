@@ -1,0 +1,12 @@
+{
+  "en": {
+    "languageName": "English",
+    "languageCode": "en-US",
+    "languageDirection": "ltr"
+  },
+  "ko": {
+    "languageName": "한국어",
+    "languageCode": "ko-KR",
+    "languageDirection": "ltr"
+  }
+}

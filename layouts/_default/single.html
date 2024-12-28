@@ -1,0 +1,9 @@
+{{- define "metadata" -}}
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .}}">
+{{- end -}}
+{{- define "main" -}}
+  <article id="content">
+    {{ .Content }}
+  </article>
+{{- end -}}

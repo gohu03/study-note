@@ -1,0 +1,38 @@
+{
+  "goldmark": {
+    "extensions": {
+      "footnote": true,
+      "linkify": true,
+      "passthrough": {
+        "enable": true,
+        "delimiters": {
+          "block": [["$$", "$$"]],
+          "inline": [["$", "$"]]
+        }
+      },
+      "strikethrough": true,
+      "table": true
+    },
+    "parser": {
+      "wrapStandAloneImageWithinParagraph": true,
+      "autoHeadingIDType": "github",
+      "attribute": {
+        "block": true,
+        "title": true
+      }
+    },
+    "renderHooks": {
+      "image": {
+        "enableDefault": true
+      },
+      "link": {
+        "enableDefault": true
+      }
+    }
+  },
+  "tableOfContents": {
+    "startLevel": 1,
+    "endLevel": 4,
+    "ordered": false
+  }
+}
