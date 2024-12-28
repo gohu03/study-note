@@ -1,0 +1,915 @@
+{
+  "title": "hugo configuration",
+  "type": "object",
+  "properties": {
+    "archetypeDir": {
+      "type": "string",
+      "default": "archetypes"
+    },
+    "assetDir": {
+      "type": "string",
+      "default": "assets"
+    },
+    "baseURL": {
+      "type": "string",
+      "examples": [
+        "https://www.example.org/docs/"
+      ]
+    },
+    "build": {
+      "type": "object",
+      "properties": {
+        "buildStats": {
+          "type": "object",
+          "properties": {
+            "disableClasses": {
+              "type": "boolean",
+              "default": false
+            },
+            "disableIDs": {
+              "type": "boolean",
+              "default": false
+            },
+            "disableTags": {
+              "type": "boolean",
+              "default": false
+            },
+            "enable": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "cacheBusters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {},
+              "target": {}
+            }
+          }
+        },
+        "noJSConfigInAssets": {
+          "type": "boolean",
+          "default": false
+        },
+        "useResourceCacheWhen": {
+          "type": "string",
+          "enum": ["never", "always", "fallback"],
+          "default": "fallback"
+        }
+      }
+    },
+    "buildDrafts": {
+      "type": "boolean",
+      "default": false
+    },
+    "buildExpired": {
+      "type": "boolean",
+      "default": false
+    },
+    "buildFuture": {
+      "type": "boolean",
+      "default": false
+    },
+    "caches": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "maxAge": {
+            "type": "string"
+          },
+          "dir": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "canonifyURLs": {
+      "type": "boolean",
+      "default": false
+    },
+    "capitalizeListTitles": {
+      "type": "boolean",
+      "default": true
+    },
+    "cascade": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "_target": {
+            "type": "object",
+            "properties": {
+              "path": { "type": "string" },
+              "kind": { "type": "string" },
+              "lang": { "type": "string" }
+            }
+          },
+          "params": {
+            "type": "object"
+          }
+        }
+      }
+    }, 
+    "cleanDestinationDir": {
+      "type": "boolean",
+      "default": false
+    },
+    "contentDir": {
+      "type": "string",
+      "default": "content"
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "dataDir": {
+      "type": "string",
+      "default": "data"
+    },
+    "defaultContentLanguage": {
+      "type": "string",
+      "default": "en"
+    },
+    "defaultContentLanguageInSubdir": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableAliases": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableHugoGeneratorInject": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableKinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [ "404", "home", "page", "robotstxt", "rss", "section", "sitemap", "taxonomy", "term" ]
+      }
+    },
+    "disableLanguages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disableLiveReload": {
+      "type": "boolean",
+      "default": false
+    },
+    "disablePathToLower": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableEmoji": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableGitInfo": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableMissingTranslationPlaceholders": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableRobotsTXT": {
+      "type": "boolean",
+      "default": false
+    },
+    "environment": {
+      "type": "string",
+      "default": "hugo > production | hugo server > development"
+    },
+    "frontmatter": {
+      "type": "object"
+    }, //?
+    "hasCJKLanguage": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreCache": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoreLogs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ignoreVendorPaths": {
+      "type": "string"
+    },
+    "imaging": {
+      "type": "object",
+      "properties": {
+        "anchor": {
+        },
+        "bgColor": {
+          "type": "string"
+        },
+        "hint": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "integer"
+        },
+        "resampleFilter": {
+          "type": "string"
+        },
+        "exif": {
+          "type": "object",
+          "properties": {
+            "disableDate": {
+              "type": "boolean",
+              "default": false
+            },
+            "disableLatLong": {
+              "type": "boolean",
+              "default": false
+            },
+            "excludeFields": {
+              "type": "string",
+              "default": ""
+            },
+            "includeFields": {
+              "type": "string",
+              "default": ""
+            }
+          }
+        }
+      }
+    },
+    "languageCode": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "contentDir": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "languageCode": {
+            "type": "string"
+          },
+          "languageDirection": {
+            "type": "string",
+            "enum": ["ltr", "rtl"]
+          },
+          "languageName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "layoutDir": {
+      "type": "string",
+      "default": "layouts"
+    },
+    "markup": {
+      "type": "object",
+      "properties": {
+        "defaultMarkdownHandler": {
+          "type": "string",
+          "enum": ["asciidocext", "goldmark", "org", "pandoc", "rst"],
+          "default": "goldmark"
+        },
+        "goldmark": {
+          "duplicateResourceFiles": {
+            "type": "boolean",
+            "default": false
+          },
+          "extensions": {
+            "type": "object"
+          },
+          "parser": {
+            "type": "object",
+            "properties": {
+              "wrapStandAloneImageWithinParagraph": {
+                "type": "boolean",
+                "default": true
+              },
+              "autoHeadingIDType": {
+                "type": "string",
+                "enum": ["github", "github-ascii", "blackfriday"],
+                "default": "github"
+              },
+              "attribute": {
+                "type": "object",
+                "properties": {
+                  "block": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "title": {
+                    "type": "boolean",
+                    "default": true
+                  }
+                }
+              }
+            }
+          },
+          "renderHooks": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "object",
+                "properties": {
+                  "enableDefault": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                }
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "enableDefault": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                }
+              }
+            }
+          },
+          "renderer": {
+            "type": "object",
+            "properties": {
+              "hardWraps": {
+                "type": "boolean",
+                "default": false
+              },
+              "unsafe": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          }
+        },
+        "asciidocExt": {
+          "type": "object",
+          "properties": {
+            "attributes": {
+              "type": "object"
+            },
+            "backend": {
+              "type": "string",
+              "default": "html5"
+            },
+            "extensions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "asciidoctor-html5s",
+                  "asciidoctor-bibtex",
+                  "asciidoctor-diagram",
+                  "asciidoctor-interdoc-reftext",
+                  "asciidoctor-katex",
+                  "asciidoctor-latex",
+                  "asciidoctor-mathematical",
+                  "asciidoctor-question"
+                ]
+              }
+            },
+            "failureLevel": {
+              "type": "string",
+              "default": "fatal"
+            },
+            "noHeaderOrFooter": {
+              "type": "boolean",
+              "default": true
+            },
+            "preserveTOC": {
+              "type": "boolean",
+              "default": false
+            },
+            "safeMode": {
+              "type": "string",
+              "enum": ["unsafe", "safe", "server", "secure"],
+              "default": "unsafe"
+            },
+            "sectionNumbers": {
+              "type": "boolean",
+              "default": false
+            },
+            "trace": {
+              "type": "boolean",
+              "default": false
+            },
+            "verbose": {
+              "type": "boolean",
+              "default": false
+            },
+            "workingFolderCurrent": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "highlight": {
+          "type": "object",
+          "properties": {
+            "anchorLineNos": {
+              "type": "boolean",
+              "default": false
+            },
+            "codeFences": {
+              "type": "boolean",
+              "default": true
+            },
+            "guessSyntax": {
+              "type": "boolean",
+              "default": false
+            },
+            "hl_Lines": {
+              "type": "string",
+              "default": ""
+            },
+            "hl_inline": {
+              "type": "boolean",
+              "default": false
+            },
+            "lineAnchors": {
+              "type": "string",
+              "default": ""
+            },
+            "lineNoStart": {
+              "type": "integer",
+              "default": 1
+            },
+            "lineNos": {
+              "type": "boolean",
+              "default": false
+            },
+            "lineNumbersInTable": {
+              "type": "boolean",
+              "default": true
+            },
+            "noClasses": {
+              "type": "boolean",
+              "default": true
+            },
+            "noHl": {
+              "type": "boolean",
+              "default": false
+            },
+            "style": {
+              "type": "string",
+              "default": "monokai"
+            },
+            "tabWidth": {
+              "type": "integer",
+              "default": 4
+            }
+          }
+        },
+        "tableOfContents": {
+          "type": "object",
+          "properties": {
+            "startLevel": {
+              "type": "integer",
+              "default": 2
+            },
+            "endLevel": {
+              "type": "integer",
+              "default": 3
+            },
+            "ordered": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    "mediaTypes": {
+      "type": ""
+    }, // ?
+    "menus": {
+      "type": ""
+    }, // ?
+    "minify": {
+      "type": "object",
+      "properties": {
+        "disableCSS": {
+          "type": "boolean",
+          "default": false
+        },
+        "disableHTML": {
+          "type": "boolean",
+          "default": false
+        },
+        "disableJS": {
+          "type": "boolean",
+          "default": false
+        },
+        "disableJSON": {
+          "type": "boolean",
+          "default": false
+        },
+        "disableSVG": {
+          "type": "boolean",
+          "default": false
+        },
+        "disableXML": {
+          "type": "boolean",
+          "default": false
+        },
+        "minifyOutput": {
+          "type": "boolean",
+          "default": false
+        },
+        "tdewolff": {
+          "type": "object",
+          "properties": {
+            "css": {
+              "type": "object",
+              "properties": {
+                "inline": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "keepCSS2": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "precision": {
+                  "type": "integer",
+                  "default": 0
+                },
+              }
+            },
+            "html": {
+              "type": "object",
+              "properties": {
+                "keepComments": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "keepConditionalComments": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "keepDefaultAttrVals": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "keepDocumentTags": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "keppEndTags": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "keepQuotes": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "keepSpecialComments": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "keepWhitespace": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "templateDelims": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "js": {
+              "type": "object",
+              "properties": {
+                "keepVarNames": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "precision": {
+                  "type": "integer",
+                  "default": 0
+                },
+                "version": {
+                  "type": "integer",
+                  "default": 2022
+                }
+              }
+            },
+            "json": {
+              "type": "object",
+              "properties": {
+                "keepNumbers": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "precision": {
+                  "type": "integer",
+                  "default": 0
+                }
+              }
+            },
+            "svg": {
+              "type": "object",
+              "properties": {
+                "inline": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "keepComments": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "precision": {
+                  "type": "integer",
+                  "default": 0
+                }
+              }
+            },
+            "xml": {
+              "type": "object",
+              "properties": {
+                "keepWhitespace": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "module": {
+      "type": "object",
+      "properties": {
+        "noProxy": {
+          "type": "string",
+          "default": "none"
+        },
+        "noVendor": {
+          "type": "string",
+          "default": ""
+        },
+        "private": {
+          "type": "string",
+          "default": "*.*"
+        },
+        "proxy": {
+          "type": "string",
+          "default": "direct"
+        },
+        "vendorClosest": {
+          "type": "boolean",
+          "default": false
+        },
+        "workspace": {
+          "type": "string",
+          "default": "off"
+        },
+        "replacements": {
+          "type": "string",
+          "default": ""
+        },
+        "hugoVersion": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "string",
+              "default": ""
+            },
+            "max": {
+              "type": "string",
+              "default": ""
+            },
+            "extended": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "imports": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "ignoreConfig": {
+                "type": "boolean"
+              },
+              "ignoreImports": {
+                "type": "boolean"
+              },
+              "disable": {
+                "type": "boolean"
+              },
+              "noMounts": {
+                "type": ""
+              },
+              "noVendor": {
+                "type": ""
+              }
+            }
+          }
+        },
+        "mounts": {
+          "type": "array",
+          "items": {
+            "source": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "disableWatch": {
+              "type": "boolean",
+              "default": false
+            },
+            "lang": {
+              "type": "string"
+            },
+            "includeFiles": {
+              "type": ["string", "array"],
+              "items": {
+                "type": "string"
+              }
+            },
+            "excludeFiles": {
+              "type": ["string", "array"],
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "newContentEditor": {
+      "type": "string"  
+    },
+    "noBuildLock": {
+      "type": "boolean",
+      "default": false
+    },
+    "noChmod": {
+      "type": "boolean",
+      "default": false
+    },
+    "noTimes": {
+      "type": "boolean",
+      "default": false
+    },
+    "outputFormats": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "page": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "pagination": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "panicOnWarning": {
+      "type": "boolean",
+      "default": false
+    },
+    "permalinks": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "pluralizeListTitles": {
+      "type": "boolean",
+      "default": true
+    },
+    "printI18nWarnings": {
+      "type": "boolean",
+      "default": false
+    },
+    "printPathWarnings": {
+      "type": "boolean",
+      "default": false
+    },
+    "printUnusedTemplates": {
+      "type": "boolean",
+      "default": false
+    },
+    "publishDir": {
+      "type": "string",
+      "default": "public"
+    },
+    "refLinksErrorLevel": {
+      "type": "string",
+      "enum": ["ERROR", "WARNING"],
+      "default": "ERROR"
+    },
+    "refLinksNotFoundURL": {
+      "type": "string"
+    },
+    "related": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "relativeURLs": {
+      "type": "boolean",
+      "default": false
+    },
+    "removePathAccents": {
+      "type": "boolean",
+      "default": false
+    },
+    "renderSegments": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "sectionPagesMenu": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "security": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "segments": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "sitemap": {
+      "type": "",
+      "default": ""
+    }, // ?
+    "summaryLength": {
+      "type": "integer"
+    },
+    "taxonomies": {
+      "type": "object",
+      "properties": {
+        "category": {},
+        "series": {},
+        "tag": {}
+      }
+    }, // ?
+    "templateMetrics": {
+      "type": "boolean",
+      "default": false
+    },
+    "templateMetricsHints": {
+      "type": "boolean",
+      "default": false
+    },
+    "theme": {
+      "type": ""
+    }, // ?
+    "themesDir": {
+      "type": "string",
+      "default": "themes"
+    },
+    "timeout": {
+      "type": "string",
+      "default": "30s"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleCaseStyle": {
+      "type": "string",
+      "enum": ["ap", "chicago", "go", "firstupper", "none"],
+      "default": "ap"
+    },
+    "uglyURLs": {
+      "type": ["boolean", "object"],
+      "default": false
+    },
+    "watch": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
