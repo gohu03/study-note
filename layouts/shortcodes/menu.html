@@ -1,0 +1,13 @@
+{{- $items := .Store.Get "items" -}}
+{{- $theme := .Get "theme" -}}
+<div class="menu" 
+  {{- with $theme }} {{ . | safeHTMLAttr }} {{- end -}}>
+  <ul class="menu-nav">
+    {{- range $k, $v := $items -}}
+    <li data-href="{{ $k }}">{{ $v }}</li>
+    {{- end -}}
+  </ul>
+  <div class="menu-content">
+    {{- .Inner -}}
+  </div>
+</div>
