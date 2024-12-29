@@ -1,15 +1,12 @@
 {{- define "metadata" -}}
   <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .}}">
+  {{- with .Description -}}<meta name="description" content="{{ . }}">{{- end -}}
 {{- end -}}
 {{- define "main" -}}
-  <article id="content">
-    {{ .Content }}
-  </article>
-  {{- if .Store.Get "hasMermaid" -}}
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
-  {{- end -}}
+<article id="content">
+  {{ .Content }}
+</article>
+{{- range $e := (.Store.Get "script") }}
+{{ partial ($e | printf "%s.html") . }}
+{{- end -}}
 {{- end -}}
