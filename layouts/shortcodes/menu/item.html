@@ -1,5 +1,5 @@
 {{- $name := .Get "name" -}}
-{{- $id := .Get "id" -}}
+{{- $id := ($name | xxhash | printf "menu-%s") -}}
 {{- .Parent.Store.SetInMap "items" $id $name -}}
 <div class="menu-item" id="{{ $id }}">
   {{- .Inner | markdownify -}}
