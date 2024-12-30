@@ -4,7 +4,7 @@
 {{- $ref := (split (.Get "ref") ".") -}}
 {{- $def := (index .Page.Params.glossary $term) -}}
 
-{{- if not $def -}}
+{{- if $ref -}}
   {{- $def = (index .Site.Data.glossary $ref) -}}
 {{- end -}}
 
