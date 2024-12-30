@@ -1,0 +1,18 @@
+{{- $term := .Get "term" -}}
+{{- $class := (trim (.Get "class" | printf "tooltip %s") " ") -}}
+{{- $style := .Get "style" -}}
+{{- $ref := (split (.Get "ref") ".") -}}
+{{- $def := (index .Page.Params.glossary $term) -}}
+
+{{- if not $def -}}
+  {{- $def = (index .Site.Data.glossary $ref) -}}
+{{- end -}}
+
+{{- $id := $term | xxhash | printf "term-%s" -}}
+{{- .Page.Store.SetInMap "glossary" $id $def -}}
+
+<dfn 
+  {{- with $style }} style="{{ . | safeCSS }}" {{- end -}}
+  {{- with $class }} class="{{ . }}" {{- end -}}
+  {{- with $id }} data-href="{{ . }}" {{- end -}}
+  >{{ $term }}</dfn>

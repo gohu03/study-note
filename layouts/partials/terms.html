@@ -1,0 +1,7 @@
+{{- if .Page.Store.Get "glossary" -}}
+<div class="glossary">
+  {{- range $k, $v := .Page.Store.Get "glossary" -}}
+  <div class="term-tooltip" id="{{ $k }}">{{ $v | safeHTML }}</div>
+  {{- end -}}
+</div>
+{{- end -}}
