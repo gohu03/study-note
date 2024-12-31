@@ -1,0 +1,22 @@
+{
+  "CCB": "Configuration Control Board",
+  "CM": "Configuration Management",
+  "COTS": "Commercial-Off-The-Shelf",
+  "FCA": "Functional Configuration Audit",
+  "FOSS": "Free and Open Source Software",
+  "GUI": "Graphical User Interface",
+  "NDI": "Non-Developmental Items",
+  "QA": "Quality Assurance",
+  "PCA": "Physical Configuration Audit",
+  "PESTEL": "Political, Economic, Social, Technological, Environmental, and Legal",
+  "PMI": "Project Management Institute",
+  "PMP": "Project Management Plan",
+  "PRM": "Process Reference Model",
+  "SCM": "Software Configuration Management",
+  "SDP": "Software Development Plan",
+  "SEMP": "Systems Engineering Management Plan",
+  "SOI": "System of Interest",
+  "SoS": "System of Systems",
+  "SWOT": "Strengths, Weakness, Opportunities, Threats",
+  "WBS": "Work Breakdown Structure"
+}
