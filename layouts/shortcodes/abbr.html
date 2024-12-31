@@ -1,0 +1,27 @@
+{{- $term := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $term = .Get "term" -}}
+{{- else -}}
+  {{- $term = .Get 0 -}}
+{{- end -}}
+
+{{- $def := "" -}}
+{{- if (.Get "def") -}}
+  {{- $def = (.Get "def") -}}
+{{- else if (.Get "ref") -}}
+  {{- $ref := (split (.Get "ref") ".") -}}
+  {{- $def = (index .Site.Data.abbr ($ref | append $term)) -}}
+{{- else if (isset .Page.Params.abbr $term) -}}
+  {{- $def = (index .Page.Param.abbr $term) -}}
+{{- else if .Page.Params.abbrRef -}}
+  {{- $ref := (split .Page.Params.abbrRef ".") -}}
+  {{- $def = (index .Site.Data.abbr ($ref | append $term)) -}}
+{{- end -}}
+
+{{- $class := .Get "class" -}}
+{{- $style := .Get "style" -}}
+
+<abbr title="{{ $def }}" 
+  {{- with $class }} class="{{ . }}" {{- end -}}
+  {{- with $style }} style="{{ . }}" {{- end -}}
+  >{{ $term }}</abbr>
