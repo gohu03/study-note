@@ -4,25 +4,26 @@
 {{- else -}}
   {{- $term = .Get 0 -}}
 {{- end -}}
-{{- $def := "" -}}
+{{- $info := dict -}}
 
 {{- if isset . "Inner" -}}
-  {{- $def = .Inner -}}
+  {{- $termref := .Get "termref" | default "unknown" -}}
+  {{- $info = dict "def" .Inner "ref" $termref "refType" "text" -}}
 {{- else if (.Get "ref") -}}
   {{- $ref := (split (.Get "ref") ".") -}}
-  {{- $def = (index .Site.Data.glossary ($ref | append $term)) -}}
+  {{- $info = (index .Site.Data.glossary ($ref | append $term)) -}}
 {{- else if (.Get 1) -}}
   {{- $ref := (split (.Get 1) ".") -}}
-  {{- $def = (index .Site.Data.glossary ($ref | append $term)) -}}
-{{- else if isset .Page.Params.glossary "term" -}}
-  {{- $def = (index .Page.Params.glossary $term) -}}
+  {{- $info = (index .Site.Data.glossary ($ref | append $term)) -}}
+{{- else if isset .Page.Params.glossary $term -}}
+  {{- $info = (index .Page.Params.glossary $term) -}}
 {{- else if .Page.Params.glossaryRef -}}
   {{- $ref := (split .Page.Params.glossaryRef ".") -}}
-  {{- $def = (index .Site.Data.glossary ($ref | append $term)) -}}
+  {{- $info = (index .Site.Data.glossary ($ref | append $term)) -}}
 {{- end -}}
 
 {{- $id := $term | xxhash | printf "term-%s" -}}
-{{- .Page.Store.SetInMap "glossary" $id $def -}}
+{{- .Page.Store.SetInMap "glossary" $id $info -}}
 
 {{- if .IsNamedParams -}}
   {{- $display := .Get "display" | default $term }}
