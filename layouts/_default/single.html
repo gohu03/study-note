@@ -8,6 +8,6 @@
 </article>
 {{ partial "terms.html" . }}
 {{- range $e := (.Store.Get "script") }}
-{{ partial ($e | printf "%s.html") . }}
+{{- partialCached ($e | printf "%s.html") . -}}
 {{- end -}}
 {{- end -}}
