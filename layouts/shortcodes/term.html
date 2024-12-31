@@ -1,18 +1,39 @@
-{{- $term := .Get "term" -}}
-{{- $class := (trim (.Get "class" | printf "tooltip %s") " ") -}}
-{{- $style := .Get "style" -}}
-{{- $ref := (split (.Get "ref") ".") -}}
-{{- $def := (index .Page.Params.glossary $term) -}}
+{{- $term := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $term = .Get "term" -}}
+{{- else -}}
+  {{- $term = .Get 0 -}}
+{{- end -}}
+{{- $def := "" -}}
 
-{{- if $ref -}}
-  {{- $def = (index .Site.Data.glossary $ref) -}}
+{{- if isset . "Inner" -}}
+  {{- $def = .Inner -}}
+{{- else if (.Get "ref") -}}
+  {{- $ref := (split (.Get "ref") ".") -}}
+  {{- $def = (index .Site.Data.glossary ($ref | append $term)) -}}
+{{- else if (.Get 1) -}}
+  {{- $ref := (split (.Get 1) ".") -}}
+  {{- $def = (index .Site.Data.glossary ($ref | append $term)) -}}
+{{- else if isset .Page.Params.glossary "term" -}}
+  {{- $def = (index .Page.Params.glossary $term) -}}
+{{- else if .Page.Params.glossaryRef -}}
+  {{- $ref := (split .Page.Params.glossaryRef ".") -}}
+  {{- $def = (index .Site.Data.glossary ($ref | append $term)) -}}
 {{- end -}}
 
 {{- $id := $term | xxhash | printf "term-%s" -}}
 {{- .Page.Store.SetInMap "glossary" $id $def -}}
 
+{{- if .IsNamedParams -}}
+  {{- $display := .Get "display" | default $term }}
+  {{- $class := (trim (.Get "class" | printf "tooltip %s") " ") -}}
+  {{- $style := .Get "style" -}}
+
 <dfn 
   {{- with $style }} style="{{ . | safeCSS }}" {{- end -}}
   {{- with $class }} class="{{ . }}" {{- end -}}
   {{- with $id }} data-href="{{ . }}" {{- end -}}
-  >{{ $term }}</dfn>
+  >{{ $display }}</dfn>
+{{- else -}}
+<dfn class="tooltip" data-href="{{ $id }}">{{ $term }}</dfn>
+{{- end -}}
