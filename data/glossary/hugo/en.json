@@ -1,102 +1,497 @@
 {
-    "$reference": "https://gohugo.io/getting-started/glossary/",
-    "action": "See <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>.",
-    "archetype": "A template for new content. See\u00a0<a href=\"https://gohugo.io/content-management/archetypes/\">details</a>.",
-    "argument": "A <a href=\"https://gohugo.io/getting-started/glossary/#scalar\">scalar</a>, <a href=\"https://gohugo.io/getting-started/glossary/#array\">array</a>, <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a>, <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#object\">object</a> passed to a <a href=\"https://gohugo.io/getting-started/glossary/#function\">function</a>, <a href=\"https://gohugo.io/getting-started/glossary/#method\">method</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#shortcode\">shortcode</a>.",
-    "array": "A numbered sequence of elements. Unlike Go\u2019s <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a> data type, an array has a fixed length. <a href=\"https://gohugo.io/getting-started/glossary/#element\">Elements</a> within an array can be <a href=\"https://gohugo.io/getting-started/glossary/#scalar\">scalars</a>, slices, <a href=\"https://gohugo.io/getting-started/glossary/#map\">maps</a>, pages, or other arrays. See the <a href=\"https://go.dev/ref/spec#Array_types\" rel=\"external\">Go\u00a0documentation</a> for details.",
-    "bool": "See <a href=\"https://gohugo.io/getting-started/glossary/#boolean\">boolean</a>.",
-    "boolean": "A data type with two possible values, either <code>true</code> or <code>false</code>.",
-    "branch bundle": "A directory that contains an _index.md file and zero or more <a href=\"https://gohugo.io/getting-started/glossary/#resource\">resources</a>. Analogous to a physical branch, a branch bundle may have descendants including leaf bundles and other branch bundles. Top level directories with or without _index.md files are also branch bundles. This includes the home page. See\u00a0<a href=\"https://gohugo.io/content-management/page-bundles/\">details</a>.",
-    "build": "To generate a static site that includes HTML files and assets such as images, CSS, and JavaScript. The build process includes rendering and resource transformations.",
-    "bundle": "See <a href=\"https://gohugo.io/getting-started/glossary/#page-bundle\">page bundle</a>.",
-    "cache": "A software component that stores data so that future requests for the same data are faster.",
-    "chain": "Within a template, to connect one or more <a href=\"https://gohugo.io/getting-started/glossary/#identifier\">identifiers</a> with a dot. An identifier can represent a method, object, or field. For example, <code>.Site.Params.author.name</code> or <code>.Date.UTC.Hour</code>.",
-    "CJK": "A collective term for the Chinese, Japanese, and Korean languages. See <a href=\"https://en.wikipedia.org/wiki/CJK_characters\" rel=\"external\">details</a>.",
-    "CLI": "Command line interface.",
-    "collection": "An <a href=\"https://gohugo.io/getting-started/glossary/#array\">array</a>, <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a>.",
-    "content adapter": "A template that dynamically creates pages when building a site. For example, use a content adapter to create pages from a remote data source such as JSON, TOML, YAML, or XML. See\u00a0<a href=\"https://gohugo.io/content-management/content-adapters/\">details</a>.",
-    "content format": "A markup language for creating content. Typically Markdown, but may also be HTML, AsciiDoc, Org, Pandoc, or reStructuredText. See\u00a0<a href=\"https://gohugo.io/content-management/formats/\">details</a>.",
-    "content type": "A classification of content inferred from the top-level directory name or the <code>type</code> set in <a href=\"https://gohugo.io/getting-started/glossary/#front-matter\">front matter</a>. Pages in the root of the content directory, including the home page, are of type \u201cpage\u201d. Accessed via <code>.Page.Type</code> in <a href=\"https://gohugo.io/getting-started/glossary/#template\">templates</a>. See\u00a0<a href=\"https://gohugo.io/content-management/types/\">details</a>.",
-    "content view": "A template called with the <code>.Page.Render</code> method. See\u00a0<a href=\"https://gohugo.io/templates/content-view/\">details</a>.",
-    "context": "Represented by a dot \u201c.\u201d within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>, context is the current location in a data structure. For example, while iterating over a <a href=\"https://gohugo.io/getting-started/glossary/#collection\">collection</a> of pages, the context within each iteration is the page\u2019s data structure. The context received by each template depends on template type and/or how it was called. See\u00a0<a href=\"https://gohugo.io/templates/introduction/#context\">details</a>.",
-    "default sort order": "The default sort order for page collections. Hugo sorts by <a href=\"https://gohugo.io/getting-started/glossary/#weight\">weight</a>, then by date (descending), then by link title, and then by file path.",
-    "element": "A member of a slice or array.",
-    "environment": "Typically one of <code>development</code>, <code>staging</code>, or <code>production</code>, each environment may exhibit different behavior depending on configuration and template logic. For example, in a production environment you might minify and fingerprint CSS, but that probably doesn\u2019t make sense in a development environment.",
-    "field": "A predefined key-value pair in front matter such as <code>date</code> or <code>title</code>. See\u00a0also\u00a0<a href=\"https://gohugo.io/getting-started/glossary/#parameter\">parameter</a>.",
-    "flag": "An option passed to a command-line program, beginning with one or two hyphens. See\u00a0<a href=\"https://gohugo.io/commands/hugo/\">details</a>.",
-    "float": "See <a href=\"https://gohugo.io/getting-started/glossary/#floating-point\">floating point</a>.",
-    "floating point": "A numeric data type with a fractional component. For example, <code>3.14159</code>.",
-    "fragment": "The final segment of a URL, beginning with a hash (<code>#</code>) mark, that references an <code>id</code> attribute of an HTML element on the page.",
-    "front matter": "Metadata at the beginning of each content page, separated from the content by format-specific delimiters. See\u00a0<a href=\"https://gohugo.io/content-management/front-matter/\">details</a>.",
-    "function": "Used within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>, a function takes one or more <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a> and returns a value. Unlike <a href=\"https://gohugo.io/getting-started/glossary/#method\">methods</a>, functions are not associated with an <a href=\"https://gohugo.io/getting-started/glossary/#object\">object</a>. See\u00a0<a href=\"https://gohugo.io/functions/\">details</a>.",
-    "global resource": "A file within the assets directory, or within any directory <a href=\"https://gohugo.io/hugo-modules/configuration/#module-configuration-mounts\">mounted</a> to the assets directory. Capture one or more global resources using the <a href=\"https://gohugo.io/functions/resources/get/\"><code>resources.Get</code></a>, <a href=\"https://gohugo.io/functions/resources/getmatch/\"><code>resources.GetMatch</code></a>, <a href=\"https://gohugo.io/functions/resources/match/\"><code>resources.Match</code></a>, or <a href=\"https://gohugo.io/functions/resources/bytype/\"><code>resources.ByType</code></a> functions.",
-    "headless bundle": "An unpublished leaf or branch bundle whose content and resources you can include in other pages. See <a href=\"https://gohugo.io/content-management/build-options/\">build options</a>.",
-    "identifier": "A string that represents a variable, method, object, or field. It must conform to Go\u2019s <a href=\"https://go.dev/ref/spec#Identifiers\" rel=\"external\">language specification</a>, beginning with a letter or underscore, followed by zero or more letters, digits, or underscores.",
-    "int": "See <a href=\"https://gohugo.io/getting-started/glossary/#integer\">integer</a>.",
-    "integer": "A numeric data type without a fractional component. For example, <code>42</code>.",
-    "internationalization": "Software design and development efforts that enable <a href=\"https://gohugo.io/getting-started/glossary/#localization\">localization</a>. See the <a href=\"https://www.w3.org/International/questions/qa-i18n\" rel=\"external\">W3C definition</a>. Abbreviated i18n.",
-    "interval": "An <a href=\"https://en.wikipedia.org/wiki/Interval_(mathematics)\" rel=\"external\">interval</a> is a range of numbers between two endpoints: closed, open, or half-open.",
-    "kind": "See <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>.",
-    "layout": "See <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a>.",
-    "leaf bundle": "A directory that contains an index.md file and zero or more <a href=\"https://gohugo.io/getting-started/glossary/#resource\">resources</a>. Analogous to a physical leaf, a leaf bundle is at the end of a branch. It has no descendants. See\u00a0<a href=\"https://gohugo.io/content-management/page-bundles/\">details</a>.",
-    "list page": "Any <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a> that receives a page <a href=\"https://gohugo.io/getting-started/glossary/#collection\">collection</a> in <a href=\"https://gohugo.io/getting-started/glossary/#context\">context</a>. This includes the home page, <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section pages</a>, <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-page\">taxonomy pages</a>, and <a href=\"https://gohugo.io/getting-started/glossary/#term-page\">term pages</a>.",
-    "list template": "Any template that renders a <a href=\"https://gohugo.io/getting-started/glossary/#list-page\">list page</a>. This includes <a href=\"https://gohugo.io/templates/types/#home\">home</a>, <a href=\"https://gohugo.io/templates/types/#section\">section</a>, <a href=\"https://gohugo.io/templates/types/#taxonomy\">taxonomy</a>, and <a href=\"https://gohugo.io/templates/types/#term\">term</a> templates.",
-    "localization": "Adaptation of a site to meet language and regional requirements. This includes translations, language-specific media, date and currency formats, etc. See\u00a0<a href=\"https://gohugo.io/content-management/multilingual/\">details</a> and the <a href=\"https://www.w3.org/International/questions/qa-i18n\" rel=\"external\">W3C definition</a>. Abbreviated l10n.",
-    "logical path": "New in v0.123.0",
-    "map": "An unordered group of elements, each indexed by a unique key. See the <a href=\"https://go.dev/ref/spec#Map_types\" rel=\"external\">Go\u00a0documentation</a> for details.",
-    "Markdown attribute": "A list of attributes, containing one or more key-value pairs, separated by spaces or commas, and wrapped by braces. Apply Markdown attributes to images and block-level elements including blockquotes, fenced code blocks, headings, horizontal rules, lists, paragraphs, and tables. See\u00a0<a href=\"https://gohugo.io/getting-started/configuration-markup/#goldmark\">details</a>.",
-    "marshal": "To transform a data structure into a serialized object. For example, transforming a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> into a JSON string. See <a href=\"https://gohugo.io/getting-started/glossary/#unmarshal\">unmarshal</a>.",
-    "method": "Used within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a> and associated with an <a href=\"https://gohugo.io/getting-started/glossary/#object\">object</a>, a method takes zero or more <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a> and either returns a value or performs an action. For example, <code>.IsHome</code> is a method on the <code>.Page</code> object which returns <code>true</code> if the current page is the home page. See also <a href=\"https://gohugo.io/getting-started/glossary/#function\">function</a>.",
-    "module": "Like a <a href=\"https://gohugo.io/getting-started/glossary/#theme\">theme</a>, a module is a packaged combination of <a href=\"https://gohugo.io/getting-started/glossary/#archetype\">archetypes</a>, assets, content, data, <a href=\"https://gohugo.io/getting-started/glossary/#template\">templates</a>, translation tables, static files, or configuration settings. A module may serve as the basis for a new site, or to augment an existing site. See\u00a0<a href=\"https://gohugo.io/hugo-modules/\">details</a>.",
-    "node": "A class of <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kinds</a> including <code>home</code>, <code>section</code>, <code>taxonomy</code>, and <code>term</code>.",
-    "noop": "An abbreviated form of \u201cno operation\u201d, a <em>noop</em> is a statement that does nothing.",
-    "object": "A data structure with or without associated <a href=\"https://gohugo.io/getting-started/glossary/#method\">methods</a>.",
-    "ordered taxonomy": "Created by invoking the <a href=\"https://gohugo.io/methods/taxonomy/alphabetical/\"><code>Alphabetical</code></a> or <a href=\"https://gohugo.io/methods/taxonomy/bycount/\"><code>ByCount</code></a> method on a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-object\"><code>Taxonomy</code></a> object, which is a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a>, an ordered taxonomy is a <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a>, where each element is an object that contains the <a href=\"https://gohugo.io/getting-started/glossary/#term\">term</a> and a slice of its <a href=\"https://gohugo.io/getting-started/glossary/#weighted-page\">weighted pages</a>.",
-    "output format": "Hugo generates one or more files per page when building a site. For example, when rendering home, <a href=\"https://gohugo.io/getting-started/glossary/#section\">section</a>, <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy\">taxonomy</a>, and <a href=\"https://gohugo.io/getting-started/glossary/#term\">term</a> pages, Hugo generates an HTML file and an RSS file. Both HTML and RSS are built-in <em>output formats</em>. Create multiple output formats, and control generation based on <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>, or by enabling one or more output formats for one or more pages. See\u00a0<a href=\"https://gohugo.io/templates/output-formats/\">details</a>.",
-    "page bundle": "A directory that encapsulates both content and associated <a href=\"https://gohugo.io/getting-started/glossary/#resource\">resources</a>. There are two types of page bundles: <a href=\"https://gohugo.io/getting-started/glossary/#leaf-bundle\">leaf bundles</a> and <a href=\"https://gohugo.io/getting-started/glossary/#branch-bundle\">branch bundles</a>. See\u00a0<a href=\"https://gohugo.io/content-management/page-bundles/\">details</a>.",
-    "page collection": "A slice of <code>Page</code> objects.",
-    "page kind": "A classification of pages, one of <code>home</code>, <code>page</code>, <code>section</code>, <code>taxonomy</code>, or <code>term</code>. See\u00a0<a href=\"https://gohugo.io/methods/page/kind/\">details</a>.",
-    "page resource": "A file within a <a href=\"https://gohugo.io/getting-started/glossary/#page-bundle\">page bundle</a>. Capture one or more page resources using any of the <a href=\"https://gohugo.io/methods/page/resources/#methods\"><code>Resources</code></a> methods on a <code>Page</code> object.",
-    "pager": "Created during <a href=\"https://gohugo.io/getting-started/glossary/#pagination\">pagination</a>, a pager contains a subset of a list page and navigation links to other pagers.",
-    "paginate": "To split a list page into two or more subsets.",
-    "pagination": "The process of <a href=\"https://gohugo.io/getting-started/glossary/#paginate\">paginating</a> a list page. See\u00a0<a href=\"https://gohugo.io/templates/pagination/\">details</a>.",
-    "paginator": "A collection of <a href=\"https://gohugo.io/getting-started/glossary/#pager\">pagers</a>.",
-    "parameter": "Typically, a user-defined key-value pair at the site or page level, but may also refer to a configuration setting or an <a href=\"https://gohugo.io/getting-started/glossary/#argument\">argument</a>. See\u00a0also\u00a0<a href=\"https://gohugo.io/getting-started/glossary/#field\">field</a>.",
-    "partial": "A <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a> called from any other template including <a href=\"https://gohugo.io/getting-started/glossary/#shortcode\">shortcodes</a>, <a href=\"https://gohugo.io/getting-started/glossary/#render-hook\">render hooks</a>, and other partials. A partial either renders something or returns something. A partial can also call itself, for example, to <a href=\"https://gohugo.io/getting-started/glossary/#walk\">walk</a> a data structure.",
-    "permalink": "The absolute URL of a published resource or a rendered page, including scheme and host.",
-    "pipe": "See <a href=\"https://gohugo.io/getting-started/glossary/#pipeline\">pipeline</a>.",
-    "pipeline": "Within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>, a pipeline is a possibly chained sequence of values, <a href=\"https://gohugo.io/getting-started/glossary/#function\">function</a> calls, or <a href=\"https://gohugo.io/getting-started/glossary/#method\">method</a> calls. Functions and methods in the pipeline may take multiple <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a>.",
-    "publish": "See <a href=\"https://gohugo.io/getting-started/glossary/#build\">build</a>.",
-    "regular page": "Content with the \u201cpage\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. See also <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section page</a>.",
-    "relative permalink": "The host-relative URL of a published resource or a rendered page.",
-    "render hook": "A <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a> that overrides standard Markdown rendering. See\u00a0<a href=\"https://gohugo.io/render-hooks/\">details</a>.",
-    "remote resource": "A file on a remote server, accessible via HTTP or HTTPS with the <a href=\"https://gohugo.io/functions/resources/getremote/\"><code>resources.GetRemote</code></a> function.",
-    "resource": "Any file consumed by the build process to augment or generate content, structure, behavior, or presentation. For example: images, videos, content snippets, CSS, Sass, JavaScript, and data.",
-    "resource type": "The main type of a resource\u2019s <a href=\"https://gohugo.io/methods/resource/mediatype/\">media type</a>. Content files such as Markdown, HTML, AsciiDoc, Pandoc, reStructuredText, and Emacs Org Mode have resource type <code>page</code>. Other resource types include <code>image</code>, <code>video</code>, etc. Retrieve the resource type using the <a href=\"https://gohugo.io/methods/resource/resourcetype/\"><code>ResourceType</code></a> method on a <code>Resource</code> object.",
-    "scalar": "A single value, one of <a href=\"https://gohugo.io/getting-started/glossary/#string\">string</a>, <a href=\"https://gohugo.io/getting-started/glossary/#integer\">integer</a>, <a href=\"https://gohugo.io/getting-started/glossary/#floating-point\">floating point</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#boolean\">boolean</a>.",
-    "scratch pad": "Conceptually, a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> with <a href=\"https://gohugo.io/getting-started/glossary/#method\">methods</a> to set, get, update, and delete values. Attach the data structure to a <code>Page</code> object using the <a href=\"https://gohugo.io/methods/page/scratch/\"><code>Scratch</code></a> or <a href=\"https://gohugo.io/methods/page/store/\"><code>Store</code></a> methods, or create a locally scoped scratch pad using the <a href=\"https://gohugo.io/functions/collections/newscratch/\"><code>newScratch</code></a> function.",
-    "section": "A top-level content directory, or any content directory with an\u00a0_index.md file. A content directory with an\u00a0_index.md file is also known as a <a href=\"https://gohugo.io/getting-started/glossary/#branch-bundle\">branch bundle</a>. Section templates receive one or more page <a href=\"https://gohugo.io/getting-started/glossary/#collection\">collections</a> in <a href=\"https://gohugo.io/getting-started/glossary/#context\">context</a>. See\u00a0<a href=\"https://gohugo.io/content-management/sections/\">details</a>.",
-    "section page": "Content with the \u201csection\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. Typically a listing of <a href=\"https://gohugo.io/getting-started/glossary/#regular-page\">regular pages</a> and/or <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section pages</a> within the current <a href=\"https://gohugo.io/getting-started/glossary/#section\">section</a>. See also <a href=\"https://gohugo.io/getting-started/glossary/#regular-page\">regular page</a>.",
-    "shortcode": "A <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a> called from within Markdown, taking zero or more <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a>. See\u00a0<a href=\"https://gohugo.io/content-management/shortcodes/\">details</a>.",
-    "slice": "A numbered sequence of elements. Unlike Go\u2019s <a href=\"https://gohugo.io/getting-started/glossary/#array\">array</a> data type, slices are dynamically sized. <a href=\"https://gohugo.io/getting-started/glossary/#element\">Elements</a> within a slice can be <a href=\"https://gohugo.io/getting-started/glossary/#scalar\">scalars</a>, <a href=\"https://gohugo.io/getting-started/glossary/#array\">arrays</a>, <a href=\"https://gohugo.io/getting-started/glossary/#map\">maps</a>, pages, or other slices. See the <a href=\"https://go.dev/ref/spec#Slice_types\" rel=\"external\">Go\u00a0documentation</a> for details.",
-    "string": "A sequence of bytes. For example, <code>\"What is 6 times 7?\"</code>\u00a0.",
-    "string literal (interpreted)": "Interpreted string literals are character sequences between double quotes, as in \u201cfoo\u201d. Within the quotes, any character may appear except a newline and an unescaped double quote. The text between the quotes forms the value of the literal, with backslash escapes interpreted. See <a href=\"https://go.dev/ref/spec#String_literals\" rel=\"external\">details</a>.",
-    "string literal (raw)": "Raw string literals are character sequences between backticks, as in `bar`. Within the backticks, any character may appear except a backtick. Backslashes have no special meaning and the string may contain newlines. Carriage return characters (\u2019\\r\u2019) inside raw string literals are discarded from the raw string value. See <a href=\"https://go.dev/ref/spec#String_literals\" rel=\"external\">details</a>.",
-    "taxonomic weight": "Defined in front matter and unique to each taxonomy, this <a href=\"https://gohugo.io/getting-started/glossary/#weight\">weight</a> determines the sort order of page collections contained within a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-object\"><code>Taxonomy</code></a> object. See\u00a0<a href=\"https://gohugo.io/content-management/taxonomies/#order-taxonomies\">details</a>.",
-    "taxonomy": "A group of related <a href=\"https://gohugo.io/getting-started/glossary/#term\">terms</a> used to classify content. For example, a \u201ccolors\u201d taxonomy might include the terms \u201cred\u201d, \u201cgreen\u201d, and \u201cblue\u201d. See\u00a0<a href=\"https://gohugo.io/content-management/taxonomies/\">details</a>.",
-    "taxonomy object": "A <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> of <a href=\"https://gohugo.io/getting-started/glossary/#term\">terms</a> and the <a href=\"https://gohugo.io/getting-started/glossary/#weighted-page\">weighted pages</a> associated with each term.",
-    "taxonomy page": "Content with the \u201ctaxonomy\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. Typically a listing of <a href=\"https://gohugo.io/getting-started/glossary/#term\">terms</a> within a given <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy\">taxonomy</a>.",
-    "template": "A file with <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template actions</a>, located within the layouts directory of a project, theme, or module. See\u00a0<a href=\"https://gohugo.io/templates/\">details</a>.",
-    "template action": "A data evaluation or control structure within a <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a>, delimited by \u201c{{\"\u00a0and\u00a0\u201d}}\". See the <a href=\"https://pkg.go.dev/text/template#hdr-Actions\" rel=\"external\">Go\u00a0documentation</a> for details.",
-    "term": "A member of a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy\">taxonomy</a>, used to classify content. See\u00a0<a href=\"https://gohugo.io/content-management/taxonomies/\">details</a>.",
-    "term page": "Content with the \u201cterm\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. Typically a listing of <a href=\"https://gohugo.io/getting-started/glossary/#regular-page\">regular pages</a> and <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section pages</a> with a given <a href=\"https://gohugo.io/getting-started/glossary/#term\">term</a>.",
-    "theme": "A packaged combination of <a href=\"https://gohugo.io/getting-started/glossary/#archetype\">archetypes</a>, assets, content, data, <a href=\"https://gohugo.io/getting-started/glossary/#template\">templates</a>, translation tables, static files, or configuration settings. A theme may serve as the basis for a new site, or to augment an existing site. See also <a href=\"https://gohugo.io/getting-started/glossary/#module\">module</a>.",
-    "token": "An identifier within a format string, beginning with a colon and replaced with a value when rendered. For example, use tokens in format strings for both <a href=\"https://gohugo.io/content-management/urls/#permalinks\">permalinks</a> and <a href=\"https://gohugo.io/functions/time/format/#localization\">dates</a>.",
-    "type": "See <a href=\"https://gohugo.io/getting-started/glossary/#content-type\">content type</a>.",
-    "unmarshal": "To transform a serialized object into a data structure. For example, transforming a JSON file into a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> that you can access within a template. See <a href=\"https://gohugo.io/getting-started/glossary/#marshal\">marshal</a>.",
-    "variable": "A user-defined <a href=\"https://gohugo.io/getting-started/glossary/#identifier\">identifier</a> prepended with a <code>$</code> symbol, representing a value of any data type, initialized or assigned within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>. For example, <code>$foo</code>\u00a0and\u00a0<code>$bar</code> are variables.",
-    "walk": "To recursively traverse a nested data structure. For example, rendering a multilevel menu.",
-    "weight": "Used to position an element within a collection sorted by weight. Assign weights using non-zero integers. Lighter items float to the top, while heavier items sink to the bottom. Unweighted or zero-weighted elements are placed at the end of the collection. Weights are typically assigned to pages, menu entries, languages, and output formats.",
-    "weighted page": "Contained within a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-object\"><code>Taxonomy</code></a> object, a weighted page is a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> with two elements: a <code>Page</code> object, and its <a href=\"https://gohugo.io/getting-started/glossary/#taxonomic-weight\">taxonomic weight</a> as defined in front matter. Access the elements using the <code>Page</code> and <code>Weight</code> keys.",
-    "zero time": "The <em>zero time</em> is January 1, 0001, 00:00:00 UTC. Formatted per <a href=\"https://www.rfc-editor.org/rfc/rfc3339\" rel=\"external\">RFC3339</a> the <em>zero time</em> is 0001-01-01T00:00:00-00:00."
+  "action": {
+    "ref": "https://gohugo.io/getting-started/glossary/#action",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>."
+  },
+  "archetype": {
+    "ref": "https://gohugo.io/getting-started/glossary/#archetype",
+    "refType": "link",
+    "def": "A template for new content. See\u00a0<a href=\"https://gohugo.io/content-management/archetypes/\">details</a>."
+  },
+  "argument": {
+    "ref": "https://gohugo.io/getting-started/glossary/#argument",
+    "refType": "link",
+    "def": "A <a href=\"https://gohugo.io/getting-started/glossary/#scalar\">scalar</a>, <a href=\"https://gohugo.io/getting-started/glossary/#array\">array</a>, <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a>, <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#object\">object</a> passed to a <a href=\"https://gohugo.io/getting-started/glossary/#function\">function</a>, <a href=\"https://gohugo.io/getting-started/glossary/#method\">method</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#shortcode\">shortcode</a>."
+  },
+  "array": {
+    "ref": "https://gohugo.io/getting-started/glossary/#array",
+    "refType": "link",
+    "def": "A numbered sequence of elements. Unlike Go\u2019s <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a> data type, an array has a fixed length. <a href=\"https://gohugo.io/getting-started/glossary/#element\">Elements</a> within an array can be <a href=\"https://gohugo.io/getting-started/glossary/#scalar\">scalars</a>, slices, <a href=\"https://gohugo.io/getting-started/glossary/#map\">maps</a>, pages, or other arrays. See the <a href=\"https://go.dev/ref/spec#Array_types\" rel=\"external\">Go\u00a0documentation</a> for details."
+  },
+  "bool": {
+    "ref": "https://gohugo.io/getting-started/glossary/#bool",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#boolean\">boolean</a>."
+  },
+  "boolean": {
+    "ref": "https://gohugo.io/getting-started/glossary/#boolean",
+    "refType": "link",
+    "def": "A data type with two possible values, either <code>true</code> or <code>false</code>."
+  },
+  "branch bundle": {
+    "ref": "https://gohugo.io/getting-started/glossary/#branch-bundle",
+    "refType": "link",
+    "def": "A directory that contains an _index.md file and zero or more <a href=\"https://gohugo.io/getting-started/glossary/#resource\">resources</a>. Analogous to a physical branch, a branch bundle may have descendants including leaf bundles and other branch bundles. Top level directories with or without _index.md files are also branch bundles. This includes the home page. See\u00a0<a href=\"https://gohugo.io/content-management/page-bundles/\">details</a>."
+  },
+  "build": {
+    "ref": "https://gohugo.io/getting-started/glossary/#build",
+    "refType": "link",
+    "def": "To generate a static site that includes HTML files and assets such as images, CSS, and JavaScript. The build process includes rendering and resource transformations."
+  },
+  "bundle": {
+    "ref": "https://gohugo.io/getting-started/glossary/#bundle",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#page-bundle\">page bundle</a>."
+  },
+  "cache": {
+    "ref": "https://gohugo.io/getting-started/glossary/#cache",
+    "refType": "link",
+    "def": "A software component that stores data so that future requests for the same data are faster."
+  },
+  "chain": {
+    "ref": "https://gohugo.io/getting-started/glossary/#chain",
+    "refType": "link",
+    "def": "Within a template, to connect one or more <a href=\"https://gohugo.io/getting-started/glossary/#identifier\">identifiers</a> with a dot. An identifier can represent a method, object, or field. For example, <code>.Site.Params.author.name</code> or <code>.Date.UTC.Hour</code>."
+  },
+  "CJK": {
+    "ref": "https://gohugo.io/getting-started/glossary/#cjk",
+    "refType": "link",
+    "def": "A collective term for the Chinese, Japanese, and Korean languages. See <a href=\"https://en.wikipedia.org/wiki/CJK_characters\" rel=\"external\">details</a>."
+  },
+  "CLI": {
+    "ref": "https://gohugo.io/getting-started/glossary/#cli",
+    "refType": "link",
+    "def": "Command line interface."
+  },
+  "collection": {
+    "ref": "https://gohugo.io/getting-started/glossary/#collection",
+    "refType": "link",
+    "def": "An <a href=\"https://gohugo.io/getting-started/glossary/#array\">array</a>, <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a>."
+  },
+  "content adapter": {
+    "ref": "https://gohugo.io/getting-started/glossary/#content-adapter",
+    "refType": "link",
+    "def": "A template that dynamically creates pages when building a site. For example, use a content adapter to create pages from a remote data source such as JSON, TOML, YAML, or XML. See\u00a0<a href=\"https://gohugo.io/content-management/content-adapters/\">details</a>."
+  },
+  "content format": {
+    "ref": "https://gohugo.io/getting-started/glossary/#content-format",
+    "refType": "link",
+    "def": "A markup language for creating content. Typically Markdown, but may also be HTML, AsciiDoc, Org, Pandoc, or reStructuredText. See\u00a0<a href=\"https://gohugo.io/content-management/formats/\">details</a>."
+  },
+  "content type": {
+    "ref": "https://gohugo.io/getting-started/glossary/#content-type",
+    "refType": "link",
+    "def": "A classification of content inferred from the top-level directory name or the <code>type</code> set in <a href=\"https://gohugo.io/getting-started/glossary/#front-matter\">front matter</a>. Pages in the root of the content directory, including the home page, are of type \u201cpage\u201d. Accessed via <code>.Page.Type</code> in <a href=\"https://gohugo.io/getting-started/glossary/#template\">templates</a>. See\u00a0<a href=\"https://gohugo.io/content-management/types/\">details</a>."
+  },
+  "content view": {
+    "ref": "https://gohugo.io/getting-started/glossary/#content-view",
+    "refType": "link",
+    "def": "A template called with the <code>.Page.Render</code> method. See\u00a0<a href=\"https://gohugo.io/templates/content-view/\">details</a>."
+  },
+  "context": {
+    "ref": "https://gohugo.io/getting-started/glossary/#context",
+    "refType": "link",
+    "def": "Represented by a dot \u201c.\u201d within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>, context is the current location in a data structure. For example, while iterating over a <a href=\"https://gohugo.io/getting-started/glossary/#collection\">collection</a> of pages, the context within each iteration is the page\u2019s data structure. The context received by each template depends on template type and/or how it was called. See\u00a0<a href=\"https://gohugo.io/templates/introduction/#context\">details</a>."
+  },
+  "default sort order": {
+    "ref": "https://gohugo.io/getting-started/glossary/#default-sort-order",
+    "refType": "link",
+    "def": "The default sort order for page collections. Hugo sorts by <a href=\"https://gohugo.io/getting-started/glossary/#weight\">weight</a>, then by date (descending), then by link title, and then by file path."
+  },
+  "element": {
+    "ref": "https://gohugo.io/getting-started/glossary/#element",
+    "refType": "link",
+    "def": "A member of a slice or array."
+  },
+  "environment": {
+    "ref": "https://gohugo.io/getting-started/glossary/#environment",
+    "refType": "link",
+    "def": "Typically one of <code>development</code>, <code>staging</code>, or <code>production</code>, each environment may exhibit different behavior depending on configuration and template logic. For example, in a production environment you might minify and fingerprint CSS, but that probably doesn\u2019t make sense in a development environment."
+  },
+  "field": {
+    "ref": "https://gohugo.io/getting-started/glossary/#field",
+    "refType": "link",
+    "def": "A predefined key-value pair in front matter such as <code>date</code> or <code>title</code>. See\u00a0also\u00a0<a href=\"https://gohugo.io/getting-started/glossary/#parameter\">parameter</a>."
+  },
+  "flag": {
+    "ref": "https://gohugo.io/getting-started/glossary/#flag",
+    "refType": "link",
+    "def": "An option passed to a command-line program, beginning with one or two hyphens. See\u00a0<a href=\"https://gohugo.io/commands/hugo/\">details</a>."
+  },
+  "float": {
+    "ref": "https://gohugo.io/getting-started/glossary/#float",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#floating-point\">floating point</a>."
+  },
+  "floating point": {
+    "ref": "https://gohugo.io/getting-started/glossary/#floating-point",
+    "refType": "link",
+    "def": "A numeric data type with a fractional component. For example, <code>3.14159</code>."
+  },
+  "fragment": {
+    "ref": "https://gohugo.io/getting-started/glossary/#fragment",
+    "refType": "link",
+    "def": "The final segment of a URL, beginning with a hash (<code>#</code>) mark, that references an <code>id</code> attribute of an HTML element on the page."
+  },
+  "front matter": {
+    "ref": "https://gohugo.io/getting-started/glossary/#front-matter",
+    "refType": "link",
+    "def": "Metadata at the beginning of each content page, separated from the content by format-specific delimiters. See\u00a0<a href=\"https://gohugo.io/content-management/front-matter/\">details</a>."
+  },
+  "function": {
+    "ref": "https://gohugo.io/getting-started/glossary/#function",
+    "refType": "link",
+    "def": "Used within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>, a function takes one or more <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a> and returns a value. Unlike <a href=\"https://gohugo.io/getting-started/glossary/#method\">methods</a>, functions are not associated with an <a href=\"https://gohugo.io/getting-started/glossary/#object\">object</a>. See\u00a0<a href=\"https://gohugo.io/functions/\">details</a>."
+  },
+  "global resource": {
+    "ref": "https://gohugo.io/getting-started/glossary/#global-resource",
+    "refType": "link",
+    "def": "A file within the assets directory, or within any directory <a href=\"https://gohugo.io/hugo-modules/configuration/#module-configuration-mounts\">mounted</a> to the assets directory. Capture one or more global resources using the <a href=\"https://gohugo.io/functions/resources/get/\"><code>resources.Get</code></a>, <a href=\"https://gohugo.io/functions/resources/getmatch/\"><code>resources.GetMatch</code></a>, <a href=\"https://gohugo.io/functions/resources/match/\"><code>resources.Match</code></a>, or <a href=\"https://gohugo.io/functions/resources/bytype/\"><code>resources.ByType</code></a> functions."
+  },
+  "headless bundle": {
+    "ref": "https://gohugo.io/getting-started/glossary/#headless-bundle",
+    "refType": "link",
+    "def": "An unpublished leaf or branch bundle whose content and resources you can include in other pages. See <a href=\"https://gohugo.io/content-management/build-options/\">build options</a>."
+  },
+  "identifier": {
+    "ref": "https://gohugo.io/getting-started/glossary/#identifier",
+    "refType": "link",
+    "def": "A string that represents a variable, method, object, or field. It must conform to Go\u2019s <a href=\"https://go.dev/ref/spec#Identifiers\" rel=\"external\">language specification</a>, beginning with a letter or underscore, followed by zero or more letters, digits, or underscores."
+  },
+  "int": {
+    "ref": "https://gohugo.io/getting-started/glossary/#int",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#integer\">integer</a>."
+  },
+  "integer": {
+    "ref": "https://gohugo.io/getting-started/glossary/#integer",
+    "refType": "link",
+    "def": "A numeric data type without a fractional component. For example, <code>42</code>."
+  },
+  "internationalization": {
+    "ref": "https://gohugo.io/getting-started/glossary/#internationalization",
+    "refType": "link",
+    "def": "Software design and development efforts that enable <a href=\"https://gohugo.io/getting-started/glossary/#localization\">localization</a>. See the <a href=\"https://www.w3.org/International/questions/qa-i18n\" rel=\"external\">W3C definition</a>. Abbreviated i18n."
+  },
+  "interval": {
+    "ref": "https://gohugo.io/getting-started/glossary/#interval",
+    "refType": "link",
+    "def": "An <a href=\"https://en.wikipedia.org/wiki/Interval_(mathematics)\" rel=\"external\">interval</a> is a range of numbers between two endpoints: closed, open, or half-open."
+  },
+  "kind": {
+    "ref": "https://gohugo.io/getting-started/glossary/#kind",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>."
+  },
+  "layout": {
+    "ref": "https://gohugo.io/getting-started/glossary/#layout",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a>."
+  },
+  "leaf bundle": {
+    "ref": "https://gohugo.io/getting-started/glossary/#leaf-bundle",
+    "refType": "link",
+    "def": "A directory that contains an index.md file and zero or more <a href=\"https://gohugo.io/getting-started/glossary/#resource\">resources</a>. Analogous to a physical leaf, a leaf bundle is at the end of a branch. It has no descendants. See\u00a0<a href=\"https://gohugo.io/content-management/page-bundles/\">details</a>."
+  },
+  "list page": {
+    "ref": "https://gohugo.io/getting-started/glossary/#list-page",
+    "refType": "link",
+    "def": "Any <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a> that receives a page <a href=\"https://gohugo.io/getting-started/glossary/#collection\">collection</a> in <a href=\"https://gohugo.io/getting-started/glossary/#context\">context</a>. This includes the home page, <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section pages</a>, <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-page\">taxonomy pages</a>, and <a href=\"https://gohugo.io/getting-started/glossary/#term-page\">term pages</a>."
+  },
+  "list template": {
+    "ref": "https://gohugo.io/getting-started/glossary/#list-template",
+    "refType": "link",
+    "def": "Any template that renders a <a href=\"https://gohugo.io/getting-started/glossary/#list-page\">list page</a>. This includes <a href=\"https://gohugo.io/templates/types/#home\">home</a>, <a href=\"https://gohugo.io/templates/types/#section\">section</a>, <a href=\"https://gohugo.io/templates/types/#taxonomy\">taxonomy</a>, and <a href=\"https://gohugo.io/templates/types/#term\">term</a> templates."
+  },
+  "localization": {
+    "ref": "https://gohugo.io/getting-started/glossary/#localization",
+    "refType": "link",
+    "def": "Adaptation of a site to meet language and regional requirements. This includes translations, language-specific media, date and currency formats, etc. See\u00a0<a href=\"https://gohugo.io/content-management/multilingual/\">details</a> and the <a href=\"https://www.w3.org/International/questions/qa-i18n\" rel=\"external\">W3C definition</a>. Abbreviated l10n."
+  },
+  "logical path": {
+    "ref": "https://gohugo.io/getting-started/glossary/#logical-path",
+    "refType": "link",
+    "def": "New in v0.123.0"
+  },
+  "map": {
+    "ref": "https://gohugo.io/getting-started/glossary/#map",
+    "refType": "link",
+    "def": "An unordered group of elements, each indexed by a unique key. See the <a href=\"https://go.dev/ref/spec#Map_types\" rel=\"external\">Go\u00a0documentation</a> for details."
+  },
+  "Markdown attribute": {
+    "ref": "https://gohugo.io/getting-started/glossary/#markdown-attribute",
+    "refType": "link",
+    "def": "A list of attributes, containing one or more key-value pairs, separated by spaces or commas, and wrapped by braces. Apply Markdown attributes to images and block-level elements including blockquotes, fenced code blocks, headings, horizontal rules, lists, paragraphs, and tables. See\u00a0<a href=\"https://gohugo.io/getting-started/configuration-markup/#goldmark\">details</a>."
+  },
+  "marshal": {
+    "ref": "https://gohugo.io/getting-started/glossary/#marshal",
+    "refType": "link",
+    "def": "To transform a data structure into a serialized object. For example, transforming a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> into a JSON string. See <a href=\"https://gohugo.io/getting-started/glossary/#unmarshal\">unmarshal</a>."
+  },
+  "method": {
+    "ref": "https://gohugo.io/getting-started/glossary/#method",
+    "refType": "link",
+    "def": "Used within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a> and associated with an <a href=\"https://gohugo.io/getting-started/glossary/#object\">object</a>, a method takes zero or more <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a> and either returns a value or performs an action. For example, <code>.IsHome</code> is a method on the <code>.Page</code> object which returns <code>true</code> if the current page is the home page. See also <a href=\"https://gohugo.io/getting-started/glossary/#function\">function</a>."
+  },
+  "module": {
+    "ref": "https://gohugo.io/getting-started/glossary/#module",
+    "refType": "link",
+    "def": "Like a <a href=\"https://gohugo.io/getting-started/glossary/#theme\">theme</a>, a module is a packaged combination of <a href=\"https://gohugo.io/getting-started/glossary/#archetype\">archetypes</a>, assets, content, data, <a href=\"https://gohugo.io/getting-started/glossary/#template\">templates</a>, translation tables, static files, or configuration settings. A module may serve as the basis for a new site, or to augment an existing site. See\u00a0<a href=\"https://gohugo.io/hugo-modules/\">details</a>."
+  },
+  "node": {
+    "ref": "https://gohugo.io/getting-started/glossary/#node",
+    "refType": "link",
+    "def": "A class of <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kinds</a> including <code>home</code>, <code>section</code>, <code>taxonomy</code>, and <code>term</code>."
+  },
+  "noop": {
+    "ref": "https://gohugo.io/getting-started/glossary/#noop",
+    "refType": "link",
+    "def": "An abbreviated form of \u201cno operation\u201d, a <em>noop</em> is a statement that does nothing."
+  },
+  "object": {
+    "ref": "https://gohugo.io/getting-started/glossary/#object",
+    "refType": "link",
+    "def": "A data structure with or without associated <a href=\"https://gohugo.io/getting-started/glossary/#method\">methods</a>."
+  },
+  "ordered taxonomy": {
+    "ref": "https://gohugo.io/getting-started/glossary/#ordered-taxonomy",
+    "refType": "link",
+    "def": "Created by invoking the <a href=\"https://gohugo.io/methods/taxonomy/alphabetical/\"><code>Alphabetical</code></a> or <a href=\"https://gohugo.io/methods/taxonomy/bycount/\"><code>ByCount</code></a> method on a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-object\"><code>Taxonomy</code></a> object, which is a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a>, an ordered taxonomy is a <a href=\"https://gohugo.io/getting-started/glossary/#slice\">slice</a>, where each element is an object that contains the <a href=\"https://gohugo.io/getting-started/glossary/#term\">term</a> and a slice of its <a href=\"https://gohugo.io/getting-started/glossary/#weighted-page\">weighted pages</a>."
+  },
+  "output format": {
+    "ref": "https://gohugo.io/getting-started/glossary/#output-format",
+    "refType": "link",
+    "def": "Hugo generates one or more files per page when building a site. For example, when rendering home, <a href=\"https://gohugo.io/getting-started/glossary/#section\">section</a>, <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy\">taxonomy</a>, and <a href=\"https://gohugo.io/getting-started/glossary/#term\">term</a> pages, Hugo generates an HTML file and an RSS file. Both HTML and RSS are built-in <em>output formats</em>. Create multiple output formats, and control generation based on <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>, or by enabling one or more output formats for one or more pages. See\u00a0<a href=\"https://gohugo.io/templates/output-formats/\">details</a>."
+  },
+  "page bundle": {
+    "ref": "https://gohugo.io/getting-started/glossary/#page-bundle",
+    "refType": "link",
+    "def": "A directory that encapsulates both content and associated <a href=\"https://gohugo.io/getting-started/glossary/#resource\">resources</a>. There are two types of page bundles: <a href=\"https://gohugo.io/getting-started/glossary/#leaf-bundle\">leaf bundles</a> and <a href=\"https://gohugo.io/getting-started/glossary/#branch-bundle\">branch bundles</a>. See\u00a0<a href=\"https://gohugo.io/content-management/page-bundles/\">details</a>."
+  },
+  "page collection": {
+    "ref": "https://gohugo.io/getting-started/glossary/#page-collection",
+    "refType": "link",
+    "def": "A slice of <code>Page</code> objects."
+  },
+  "page kind": {
+    "ref": "https://gohugo.io/getting-started/glossary/#page-kind",
+    "refType": "link",
+    "def": "A classification of pages, one of <code>home</code>, <code>page</code>, <code>section</code>, <code>taxonomy</code>, or <code>term</code>. See\u00a0<a href=\"https://gohugo.io/methods/page/kind/\">details</a>."
+  },
+  "page resource": {
+    "ref": "https://gohugo.io/getting-started/glossary/#page-resource",
+    "refType": "link",
+    "def": "A file within a <a href=\"https://gohugo.io/getting-started/glossary/#page-bundle\">page bundle</a>. Capture one or more page resources using any of the <a href=\"https://gohugo.io/methods/page/resources/#methods\"><code>Resources</code></a> methods on a <code>Page</code> object."
+  },
+  "pager": {
+    "ref": "https://gohugo.io/getting-started/glossary/#pager",
+    "refType": "link",
+    "def": "Created during <a href=\"https://gohugo.io/getting-started/glossary/#pagination\">pagination</a>, a pager contains a subset of a list page and navigation links to other pagers."
+  },
+  "paginate": {
+    "ref": "https://gohugo.io/getting-started/glossary/#paginate",
+    "refType": "link",
+    "def": "To split a list page into two or more subsets."
+  },
+  "pagination": {
+    "ref": "https://gohugo.io/getting-started/glossary/#pagination",
+    "refType": "link",
+    "def": "The process of <a href=\"https://gohugo.io/getting-started/glossary/#paginate\">paginating</a> a list page. See\u00a0<a href=\"https://gohugo.io/templates/pagination/\">details</a>."
+  },
+  "paginator": {
+    "ref": "https://gohugo.io/getting-started/glossary/#paginator",
+    "refType": "link",
+    "def": "A collection of <a href=\"https://gohugo.io/getting-started/glossary/#pager\">pagers</a>."
+  },
+  "parameter": {
+    "ref": "https://gohugo.io/getting-started/glossary/#parameter",
+    "refType": "link",
+    "def": "Typically, a user-defined key-value pair at the site or page level, but may also refer to a configuration setting or an <a href=\"https://gohugo.io/getting-started/glossary/#argument\">argument</a>. See\u00a0also\u00a0<a href=\"https://gohugo.io/getting-started/glossary/#field\">field</a>."
+  },
+  "partial": {
+    "ref": "https://gohugo.io/getting-started/glossary/#partial",
+    "refType": "link",
+    "def": "A <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a> called from any other template including <a href=\"https://gohugo.io/getting-started/glossary/#shortcode\">shortcodes</a>, <a href=\"https://gohugo.io/getting-started/glossary/#render-hook\">render hooks</a>, and other partials. A partial either renders something or returns something. A partial can also call itself, for example, to <a href=\"https://gohugo.io/getting-started/glossary/#walk\">walk</a> a data structure."
+  },
+  "permalink": {
+    "ref": "https://gohugo.io/getting-started/glossary/#permalink",
+    "refType": "link",
+    "def": "The absolute URL of a published resource or a rendered page, including scheme and host."
+  },
+  "pipe": {
+    "ref": "https://gohugo.io/getting-started/glossary/#pipe",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#pipeline\">pipeline</a>."
+  },
+  "pipeline": {
+    "ref": "https://gohugo.io/getting-started/glossary/#pipeline",
+    "refType": "link",
+    "def": "Within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>, a pipeline is a possibly chained sequence of values, <a href=\"https://gohugo.io/getting-started/glossary/#function\">function</a> calls, or <a href=\"https://gohugo.io/getting-started/glossary/#method\">method</a> calls. Functions and methods in the pipeline may take multiple <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a>."
+  },
+  "publish": {
+    "ref": "https://gohugo.io/getting-started/glossary/#publish",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#build\">build</a>."
+  },
+  "regular page": {
+    "ref": "https://gohugo.io/getting-started/glossary/#regular-page",
+    "refType": "link",
+    "def": "Content with the \u201cpage\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. See also <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section page</a>."
+  },
+  "relative permalink": {
+    "ref": "https://gohugo.io/getting-started/glossary/#relative-permalink",
+    "refType": "link",
+    "def": "The host-relative URL of a published resource or a rendered page."
+  },
+  "render hook": {
+    "ref": "https://gohugo.io/getting-started/glossary/#render-hook",
+    "refType": "link",
+    "def": "A <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a> that overrides standard Markdown rendering. See\u00a0<a href=\"https://gohugo.io/render-hooks/\">details</a>."
+  },
+  "remote resource": {
+    "ref": "https://gohugo.io/getting-started/glossary/#remote-resource",
+    "refType": "link",
+    "def": "A file on a remote server, accessible via HTTP or HTTPS with the <a href=\"https://gohugo.io/functions/resources/getremote/\"><code>resources.GetRemote</code></a> function."
+  },
+  "resource": {
+    "ref": "https://gohugo.io/getting-started/glossary/#resource",
+    "refType": "link",
+    "def": "Any file consumed by the build process to augment or generate content, structure, behavior, or presentation. For example: images, videos, content snippets, CSS, Sass, JavaScript, and data."
+  },
+  "resource type": {
+    "ref": "https://gohugo.io/getting-started/glossary/#resource-type",
+    "refType": "link",
+    "def": "The main type of a resource\u2019s <a href=\"https://gohugo.io/methods/resource/mediatype/\">media type</a>. Content files such as Markdown, HTML, AsciiDoc, Pandoc, reStructuredText, and Emacs Org Mode have resource type <code>page</code>. Other resource types include <code>image</code>, <code>video</code>, etc. Retrieve the resource type using the <a href=\"https://gohugo.io/methods/resource/resourcetype/\"><code>ResourceType</code></a> method on a <code>Resource</code> object."
+  },
+  "scalar": {
+    "ref": "https://gohugo.io/getting-started/glossary/#scalar",
+    "refType": "link",
+    "def": "A single value, one of <a href=\"https://gohugo.io/getting-started/glossary/#string\">string</a>, <a href=\"https://gohugo.io/getting-started/glossary/#integer\">integer</a>, <a href=\"https://gohugo.io/getting-started/glossary/#floating-point\">floating point</a>, or <a href=\"https://gohugo.io/getting-started/glossary/#boolean\">boolean</a>."
+  },
+  "scratch pad": {
+    "ref": "https://gohugo.io/getting-started/glossary/#scratch-pad",
+    "refType": "link",
+    "def": "Conceptually, a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> with <a href=\"https://gohugo.io/getting-started/glossary/#method\">methods</a> to set, get, update, and delete values. Attach the data structure to a <code>Page</code> object using the <a href=\"https://gohugo.io/methods/page/scratch/\"><code>Scratch</code></a> or <a href=\"https://gohugo.io/methods/page/store/\"><code>Store</code></a> methods, or create a locally scoped scratch pad using the <a href=\"https://gohugo.io/functions/collections/newscratch/\"><code>newScratch</code></a> function."
+  },
+  "section": {
+    "ref": "https://gohugo.io/getting-started/glossary/#section",
+    "refType": "link",
+    "def": "A top-level content directory, or any content directory with an\u00a0_index.md file. A content directory with an\u00a0_index.md file is also known as a <a href=\"https://gohugo.io/getting-started/glossary/#branch-bundle\">branch bundle</a>. Section templates receive one or more page <a href=\"https://gohugo.io/getting-started/glossary/#collection\">collections</a> in <a href=\"https://gohugo.io/getting-started/glossary/#context\">context</a>. See\u00a0<a href=\"https://gohugo.io/content-management/sections/\">details</a>."
+  },
+  "section page": {
+    "ref": "https://gohugo.io/getting-started/glossary/#section-page",
+    "refType": "link",
+    "def": "Content with the \u201csection\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. Typically a listing of <a href=\"https://gohugo.io/getting-started/glossary/#regular-page\">regular pages</a> and/or <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section pages</a> within the current <a href=\"https://gohugo.io/getting-started/glossary/#section\">section</a>. See also <a href=\"https://gohugo.io/getting-started/glossary/#regular-page\">regular page</a>."
+  },
+  "shortcode": {
+    "ref": "https://gohugo.io/getting-started/glossary/#shortcode",
+    "refType": "link",
+    "def": "A <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a> called from within Markdown, taking zero or more <a href=\"https://gohugo.io/getting-started/glossary/#argument\">arguments</a>. See\u00a0<a href=\"https://gohugo.io/content-management/shortcodes/\">details</a>."
+  },
+  "slice": {
+    "ref": "https://gohugo.io/getting-started/glossary/#slice",
+    "refType": "link",
+    "def": "A numbered sequence of elements. Unlike Go\u2019s <a href=\"https://gohugo.io/getting-started/glossary/#array\">array</a> data type, slices are dynamically sized. <a href=\"https://gohugo.io/getting-started/glossary/#element\">Elements</a> within a slice can be <a href=\"https://gohugo.io/getting-started/glossary/#scalar\">scalars</a>, <a href=\"https://gohugo.io/getting-started/glossary/#array\">arrays</a>, <a href=\"https://gohugo.io/getting-started/glossary/#map\">maps</a>, pages, or other slices. See the <a href=\"https://go.dev/ref/spec#Slice_types\" rel=\"external\">Go\u00a0documentation</a> for details."
+  },
+  "string": {
+    "ref": "https://gohugo.io/getting-started/glossary/#string",
+    "refType": "link",
+    "def": "A sequence of bytes. For example, <code>\"What is 6 times 7?\"</code>\u00a0."
+  },
+  "string literal (interpreted)": {
+    "ref": "https://gohugo.io/getting-started/glossary/#string-literal-interpreted",
+    "refType": "link",
+    "def": "Interpreted string literals are character sequences between double quotes, as in \u201cfoo\u201d. Within the quotes, any character may appear except a newline and an unescaped double quote. The text between the quotes forms the value of the literal, with backslash escapes interpreted. See <a href=\"https://go.dev/ref/spec#String_literals\" rel=\"external\">details</a>."
+  },
+  "string literal (raw)": {
+    "ref": "https://gohugo.io/getting-started/glossary/#string-literal-raw",
+    "refType": "link",
+    "def": "Raw string literals are character sequences between backticks, as in `bar`. Within the backticks, any character may appear except a backtick. Backslashes have no special meaning and the string may contain newlines. Carriage return characters (\u2019\\r\u2019) inside raw string literals are discarded from the raw string value. See <a href=\"https://go.dev/ref/spec#String_literals\" rel=\"external\">details</a>."
+  },
+  "taxonomic weight": {
+    "ref": "https://gohugo.io/getting-started/glossary/#taxonomic-weight",
+    "refType": "link",
+    "def": "Defined in front matter and unique to each taxonomy, this <a href=\"https://gohugo.io/getting-started/glossary/#weight\">weight</a> determines the sort order of page collections contained within a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-object\"><code>Taxonomy</code></a> object. See\u00a0<a href=\"https://gohugo.io/content-management/taxonomies/#order-taxonomies\">details</a>."
+  },
+  "taxonomy": {
+    "ref": "https://gohugo.io/getting-started/glossary/#taxonomy",
+    "refType": "link",
+    "def": "A group of related <a href=\"https://gohugo.io/getting-started/glossary/#term\">terms</a> used to classify content. For example, a \u201ccolors\u201d taxonomy might include the terms \u201cred\u201d, \u201cgreen\u201d, and \u201cblue\u201d. See\u00a0<a href=\"https://gohugo.io/content-management/taxonomies/\">details</a>."
+  },
+  "taxonomy object": {
+    "ref": "https://gohugo.io/getting-started/glossary/#taxonomy-object",
+    "refType": "link",
+    "def": "A <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> of <a href=\"https://gohugo.io/getting-started/glossary/#term\">terms</a> and the <a href=\"https://gohugo.io/getting-started/glossary/#weighted-page\">weighted pages</a> associated with each term."
+  },
+  "taxonomy page": {
+    "ref": "https://gohugo.io/getting-started/glossary/#taxonomy-page",
+    "refType": "link",
+    "def": "Content with the \u201ctaxonomy\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. Typically a listing of <a href=\"https://gohugo.io/getting-started/glossary/#term\">terms</a> within a given <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy\">taxonomy</a>."
+  },
+  "template": {
+    "ref": "https://gohugo.io/getting-started/glossary/#template",
+    "refType": "link",
+    "def": "A file with <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template actions</a>, located within the layouts directory of a project, theme, or module. See\u00a0<a href=\"https://gohugo.io/templates/\">details</a>."
+  },
+  "template action": {
+    "ref": "https://gohugo.io/getting-started/glossary/#template-action",
+    "refType": "link",
+    "def": "A data evaluation or control structure within a <a href=\"https://gohugo.io/getting-started/glossary/#template\">template</a>, delimited by \u201c{{\"\u00a0and\u00a0\u201d}}\". See the <a href=\"https://pkg.go.dev/text/template#hdr-Actions\" rel=\"external\">Go\u00a0documentation</a> for details."
+  },
+  "term": {
+    "ref": "https://gohugo.io/getting-started/glossary/#term",
+    "refType": "link",
+    "def": "A member of a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy\">taxonomy</a>, used to classify content. See\u00a0<a href=\"https://gohugo.io/content-management/taxonomies/\">details</a>."
+  },
+  "term page": {
+    "ref": "https://gohugo.io/getting-started/glossary/#term-page",
+    "refType": "link",
+    "def": "Content with the \u201cterm\u201d <a href=\"https://gohugo.io/getting-started/glossary/#page-kind\">page kind</a>. Typically a listing of <a href=\"https://gohugo.io/getting-started/glossary/#regular-page\">regular pages</a> and <a href=\"https://gohugo.io/getting-started/glossary/#section-page\">section pages</a> with a given <a href=\"https://gohugo.io/getting-started/glossary/#term\">term</a>."
+  },
+  "theme": {
+    "ref": "https://gohugo.io/getting-started/glossary/#theme",
+    "refType": "link",
+    "def": "A packaged combination of <a href=\"https://gohugo.io/getting-started/glossary/#archetype\">archetypes</a>, assets, content, data, <a href=\"https://gohugo.io/getting-started/glossary/#template\">templates</a>, translation tables, static files, or configuration settings. A theme may serve as the basis for a new site, or to augment an existing site. See also <a href=\"https://gohugo.io/getting-started/glossary/#module\">module</a>."
+  },
+  "token": {
+    "ref": "https://gohugo.io/getting-started/glossary/#token",
+    "refType": "link",
+    "def": "An identifier within a format string, beginning with a colon and replaced with a value when rendered. For example, use tokens in format strings for both <a href=\"https://gohugo.io/content-management/urls/#permalinks\">permalinks</a> and <a href=\"https://gohugo.io/functions/time/format/#localization\">dates</a>."
+  },
+  "type": {
+    "ref": "https://gohugo.io/getting-started/glossary/#type",
+    "refType": "link",
+    "def": "See <a href=\"https://gohugo.io/getting-started/glossary/#content-type\">content type</a>."
+  },
+  "unmarshal": {
+    "ref": "https://gohugo.io/getting-started/glossary/#unmarshal",
+    "refType": "link",
+    "def": "To transform a serialized object into a data structure. For example, transforming a JSON file into a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> that you can access within a template. See <a href=\"https://gohugo.io/getting-started/glossary/#marshal\">marshal</a>."
+  },
+  "variable": {
+    "ref": "https://gohugo.io/getting-started/glossary/#variable",
+    "refType": "link",
+    "def": "A user-defined <a href=\"https://gohugo.io/getting-started/glossary/#identifier\">identifier</a> prepended with a <code>$</code> symbol, representing a value of any data type, initialized or assigned within a <a href=\"https://gohugo.io/getting-started/glossary/#template-action\">template action</a>. For example, <code>$foo</code>\u00a0and\u00a0<code>$bar</code> are variables."
+  },
+  "walk": {
+    "ref": "https://gohugo.io/getting-started/glossary/#walk",
+    "refType": "link",
+    "def": "To recursively traverse a nested data structure. For example, rendering a multilevel menu."
+  },
+  "weight": {
+    "ref": "https://gohugo.io/getting-started/glossary/#weight",
+    "refType": "link",
+    "def": "Used to position an element within a collection sorted by weight. Assign weights using non-zero integers. Lighter items float to the top, while heavier items sink to the bottom. Unweighted or zero-weighted elements are placed at the end of the collection. Weights are typically assigned to pages, menu entries, languages, and output formats."
+  },
+  "weighted page": {
+    "ref": "https://gohugo.io/getting-started/glossary/#weighted-page",
+    "refType": "link",
+    "def": "Contained within a <a href=\"https://gohugo.io/getting-started/glossary/#taxonomy-object\"><code>Taxonomy</code></a> object, a weighted page is a <a href=\"https://gohugo.io/getting-started/glossary/#map\">map</a> with two elements: a <code>Page</code> object, and its <a href=\"https://gohugo.io/getting-started/glossary/#taxonomic-weight\">taxonomic weight</a> as defined in front matter. Access the elements using the <code>Page</code> and <code>Weight</code> keys."
+  },
+  "zero time": {
+    "ref": "https://gohugo.io/getting-started/glossary/#zero-time",
+    "refType": "link",
+    "def": "The <em>zero time</em> is January 1, 0001, 00:00:00 UTC. Formatted per <a href=\"https://www.rfc-editor.org/rfc/rfc3339\" rel=\"external\">RFC3339</a> the <em>zero time</em> is 0001-01-01T00:00:00-00:00."
+  }
 }
