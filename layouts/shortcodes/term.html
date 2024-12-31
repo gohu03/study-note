@@ -25,16 +25,13 @@
 {{- $id := $term | xxhash | printf "term-%s" -}}
 {{- .Page.Store.SetInMap "glossary" $id $info -}}
 
-{{- if .IsNamedParams -}}
-  {{- $display := .Get "display" | default $term }}
-  {{- $class := (trim (.Get "class" | printf "tooltip %s") " ") -}}
-  {{- $style := .Get "style" -}}
+{{- $display := .Get "display" | default $term }}
+{{- $style := .Get "style" -}}
+{{- $class := (strings.TrimRight " " ((.Get "class" | default "") | printf "tooltip %s")) -}}
+
 
 <dfn 
   {{- with $style }} style="{{ . | safeCSS }}" {{- end -}}
   {{- with $class }} class="{{ . }}" {{- end -}}
   {{- with $id }} data-href="{{ . }}" {{- end -}}
   >{{ $display }}</dfn>
-{{- else -}}
-<dfn class="tooltip" data-href="{{ $id }}">{{ $term }}</dfn>
-{{- end -}}
