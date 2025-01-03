@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 14 8">
+  <style>
+    path, line {
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      fill: none;
+    }
+  </style>
+  <path d="M5.5,1  H4 a3,3 180 0 0 0 6 H5.5"/>
+  <path d="M8.5,1 H10 a3,3 180 0 1 0 6 H8.5"/>
+  <line x1="4" x2="10" y1="4" y2="4" />
+</svg>
