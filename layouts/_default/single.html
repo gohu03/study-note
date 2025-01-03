@@ -1,6 +1,11 @@
 {{- define "metadata" -}}
   <title>{{ .Title }}</title>
   {{- with .Description -}}<meta name="description" content="{{ . }}">{{- end -}}
+  
+  {{- $contentStyle := resources.Get "/scss/content.scss" | css.Sass | resources.Minify | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $contentStyle.Permalink }}">
+
+  {{- partial (.Site.Language.LanguageCode | printf "lang/%s.html") -}}
 {{- end -}}
 {{- define "main" -}}
 <article id="content">
