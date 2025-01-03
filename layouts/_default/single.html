@@ -6,13 +6,17 @@
   <link rel="stylesheet" href="{{ $contentStyle.Permalink }}">
 
   {{- partial (.Site.Language.LanguageCode | printf "lang/%s.html") -}}
+
+  {{- range $e := (.Store.Get "extension-header") }}
+    {{- partialCached ($e | printf "extension/header/%s.html") . -}}
+  {{- end -}}
 {{- end -}}
 {{- define "main" -}}
 <article id="content">
   {{ .Content }}
 </article>
-{{ partial "terms.html" . }}
-{{- range $e := (.Store.Get "script") }}
-{{- partialCached ($e | printf "%s.html") . -}}
+{{ partial "extension/terms.html" . }}
+{{- range $e := (.Store.Get "extension-footer") }}
+{{- partialCached ($e | printf "extension/footer/%s.html") . -}}
 {{- end -}}
 {{- end -}}
