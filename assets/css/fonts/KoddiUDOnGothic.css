@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "KoddiUDOnGothic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("KoddiUD OnGothic")
+    url(https://fastly.jsdelivr.net/gh/gohu03/study-note/assets/fonts/KoddiUDOnGothic/KoddiUDOnGothic-Regular.woff2);
+}
+
+@font-face {
+  font-family: "KoddiUDOnGothic";
+  font-style: normal;
+  font-weight: bold;
+  src: local("KoddiUD OnGothic")
+    url(https://fastly.jsdelivr.net/gh/gohu03/study-note/assets/fonts/KoddiUDOnGothic/KoddiUDOnGothic-Bold.woff2);
+}
+
+@font-face {
+  font-family: "KoddiUDOnGothic";
+  font-style: normal;
+  font-weight: 800;
+  src: local("KoddiUD OnGothic")
+    url(https://fastly.jsdelivr.net/gh/gohu03/study-note/assets/fonts/KoddiUDOnGothic/KoddiUDOnGothic-ExtraBold.woff2);
+}

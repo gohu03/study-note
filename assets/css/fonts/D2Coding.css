@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: normal;
+  src: local("D2Coding")
+    url(https://fastly.jsdelivr.net/gh/gohu03/study-note/assets/fonts/D2Coding/D2Coding.woff2);
+}
+
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: bold;
+  src: local("D2Coding")
+    url(https://fastly.jsdelivr.net/gh/gohu03/study-note/assets/fonts/D2Coding/D2CodingBold.woff2);
+}
