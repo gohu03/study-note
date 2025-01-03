@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 14 8">
   <style>
     path, line {
-      stroke: #ffffff;
+      stroke: #246BEB;
       stroke-width: 2;
       stroke-linecap: round;
       fill: none;
